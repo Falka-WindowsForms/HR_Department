@@ -31,50 +31,58 @@ namespace HR_Department
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.employees_list = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.delete_dep_button = new System.Windows.Forms.Button();
             this.save_dep_button = new System.Windows.Forms.Button();
             this.add_dep_button = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dep_name_textbox = new System.Windows.Forms.TextBox();
+            this.dep_list = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.emp_phone_textbox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.emp_address_textbox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.emp_name_textbox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.delete_emp_photo = new System.Windows.Forms.Button();
+            this.save_emp_photo = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.add_emp_photo = new System.Windows.Forms.Button();
+            this.emp_photo = new System.Windows.Forms.PictureBox();
+            this.emp_email_textbox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.emp_postition_textbox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.emp_experience_numeric = new System.Windows.Forms.NumericUpDown();
+            this.emp_salary_numeric = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.clear_emp_button = new System.Windows.Forms.Button();
+            this.delete_emp_button = new System.Windows.Forms.Button();
+            this.save_emp_button = new System.Windows.Forms.Button();
+            this.add_emp_button = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emp_photo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emp_experience_numeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emp_salary_numeric)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Controls.Add(this.employees_list);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.delete_dep_button);
             this.groupBox1.Controls.Add(this.save_dep_button);
             this.groupBox1.Controls.Add(this.add_dep_button);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.dep_name_textbox);
+            this.groupBox1.Controls.Add(this.dep_list);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -84,15 +92,17 @@ namespace HR_Department
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employees";
             // 
-            // listBox1
+            // employees_list
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(16, 232);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(302, 404);
-            this.listBox1.TabIndex = 7;
+            this.employees_list.Font = new System.Drawing.Font("MS Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.employees_list.FormattingEnabled = true;
+            this.employees_list.ItemHeight = 27;
+            this.employees_list.Location = new System.Drawing.Point(16, 232);
+            this.employees_list.Name = "employees_list";
+            this.employees_list.ScrollAlwaysVisible = true;
+            this.employees_list.Size = new System.Drawing.Size(302, 382);
+            this.employees_list.TabIndex = 7;
+            this.employees_list.SelectedIndexChanged += new System.EventHandler(this.employees_list_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -113,6 +123,7 @@ namespace HR_Department
             this.delete_dep_button.TabIndex = 5;
             this.delete_dep_button.Text = "Delete";
             this.delete_dep_button.UseVisualStyleBackColor = true;
+            this.delete_dep_button.Click += new System.EventHandler(this.delete_dep_button_Click);
             // 
             // save_dep_button
             // 
@@ -133,22 +144,24 @@ namespace HR_Department
             this.add_dep_button.TabIndex = 3;
             this.add_dep_button.Text = "Add";
             this.add_dep_button.UseVisualStyleBackColor = true;
+            this.add_dep_button.Click += new System.EventHandler(this.add_dep_button_Click);
             // 
-            // textBox1
+            // dep_name_textbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(7, 102);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(311, 27);
-            this.textBox1.TabIndex = 2;
+            this.dep_name_textbox.Location = new System.Drawing.Point(7, 102);
+            this.dep_name_textbox.Name = "dep_name_textbox";
+            this.dep_name_textbox.Size = new System.Drawing.Size(311, 27);
+            this.dep_name_textbox.TabIndex = 2;
             // 
-            // comboBox1
+            // dep_list
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(7, 67);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(311, 28);
-            this.comboBox1.TabIndex = 1;
+            this.dep_list.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dep_list.FormattingEnabled = true;
+            this.dep_list.Location = new System.Drawing.Point(7, 67);
+            this.dep_list.Name = "dep_list";
+            this.dep_list.Size = new System.Drawing.Size(311, 28);
+            this.dep_list.TabIndex = 1;
+            this.dep_list.SelectedIndexChanged += new System.EventHandler(this.dep_list_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -162,19 +175,25 @@ namespace HR_Department
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.add_emp_button);
+            this.groupBox2.Controls.Add(this.save_emp_button);
+            this.groupBox2.Controls.Add(this.delete_emp_button);
+            this.groupBox2.Controls.Add(this.clear_emp_button);
+            this.groupBox2.Controls.Add(this.emp_salary_numeric);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.emp_experience_numeric);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.emp_postition_textbox);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.emp_email_textbox);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.emp_phone_textbox);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.emp_address_textbox);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.dateTimePicker);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.emp_name_textbox);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox2.Location = new System.Drawing.Point(694, 0);
@@ -184,12 +203,12 @@ namespace HR_Department
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information";
             // 
-            // textBox4
+            // emp_phone_textbox
             // 
-            this.textBox4.Location = new System.Drawing.Point(6, 287);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(258, 27);
-            this.textBox4.TabIndex = 18;
+            this.emp_phone_textbox.Location = new System.Drawing.Point(6, 287);
+            this.emp_phone_textbox.Name = "emp_phone_textbox";
+            this.emp_phone_textbox.Size = new System.Drawing.Size(258, 27);
+            this.emp_phone_textbox.TabIndex = 18;
             // 
             // label7
             // 
@@ -201,12 +220,12 @@ namespace HR_Department
             this.label7.TabIndex = 17;
             this.label7.Text = "Phone";
             // 
-            // textBox3
+            // emp_address_textbox
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 216);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(258, 27);
-            this.textBox3.TabIndex = 16;
+            this.emp_address_textbox.Location = new System.Drawing.Point(6, 216);
+            this.emp_address_textbox.Name = "emp_address_textbox";
+            this.emp_address_textbox.Size = new System.Drawing.Size(258, 27);
+            this.emp_address_textbox.TabIndex = 16;
             // 
             // label6
             // 
@@ -218,13 +237,13 @@ namespace HR_Department
             this.label6.TabIndex = 15;
             this.label6.Text = "Address";
             // 
-            // dateTimePicker1
+            // dateTimePicker
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(10, 146);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(258, 27);
-            this.dateTimePicker1.TabIndex = 14;
+            this.dateTimePicker.CalendarFont = new System.Drawing.Font("MS Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker.Location = new System.Drawing.Point(10, 146);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(258, 27);
+            this.dateTimePicker.TabIndex = 14;
             // 
             // label5
             // 
@@ -236,12 +255,12 @@ namespace HR_Department
             this.label5.TabIndex = 13;
             this.label5.Text = "Birthday date";
             // 
-            // textBox2
+            // emp_name_textbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(10, 67);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(258, 27);
-            this.textBox2.TabIndex = 12;
+            this.emp_name_textbox.Location = new System.Drawing.Point(10, 67);
+            this.emp_name_textbox.Name = "emp_name_textbox";
+            this.emp_name_textbox.Size = new System.Drawing.Size(258, 27);
+            this.emp_name_textbox.TabIndex = 12;
             // 
             // label4
             // 
@@ -255,11 +274,11 @@ namespace HR_Department
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.delete_emp_photo);
+            this.groupBox3.Controls.Add(this.save_emp_photo);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.pictureBox1);
+            this.groupBox3.Controls.Add(this.add_emp_photo);
+            this.groupBox3.Controls.Add(this.emp_photo);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(324, 0);
             this.groupBox3.Name = "groupBox3";
@@ -268,25 +287,25 @@ namespace HR_Department
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Photo";
             // 
-            // button1
+            // delete_emp_photo
             // 
-            this.button1.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(251, 588);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 42);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = true;
+            this.delete_emp_photo.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.delete_emp_photo.Location = new System.Drawing.Point(251, 588);
+            this.delete_emp_photo.Name = "delete_emp_photo";
+            this.delete_emp_photo.Size = new System.Drawing.Size(88, 42);
+            this.delete_emp_photo.TabIndex = 10;
+            this.delete_emp_photo.Text = "Delete";
+            this.delete_emp_photo.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // save_emp_photo
             // 
-            this.button2.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(139, 588);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 42);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
+            this.save_emp_photo.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.save_emp_photo.Location = new System.Drawing.Point(139, 588);
+            this.save_emp_photo.Name = "save_emp_photo";
+            this.save_emp_photo.Size = new System.Drawing.Size(88, 42);
+            this.save_emp_photo.TabIndex = 9;
+            this.save_emp_photo.Text = "Save";
+            this.save_emp_photo.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -298,32 +317,32 @@ namespace HR_Department
             this.label3.TabIndex = 1;
             this.label3.Text = "Employee photo";
             // 
-            // button3
+            // add_emp_photo
             // 
-            this.button3.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(28, 588);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(88, 42);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
+            this.add_emp_photo.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.add_emp_photo.Location = new System.Drawing.Point(28, 588);
+            this.add_emp_photo.Name = "add_emp_photo";
+            this.add_emp_photo.Size = new System.Drawing.Size(88, 42);
+            this.add_emp_photo.TabIndex = 8;
+            this.add_emp_photo.Text = "Add";
+            this.add_emp_photo.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // emp_photo
             // 
-            this.pictureBox1.Image = global::HR_Department.Properties.Resources.profile;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 67);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(358, 515);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.emp_photo.Image = global::HR_Department.Properties.Resources.profile;
+            this.emp_photo.Location = new System.Drawing.Point(6, 67);
+            this.emp_photo.Name = "emp_photo";
+            this.emp_photo.Size = new System.Drawing.Size(358, 515);
+            this.emp_photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.emp_photo.TabIndex = 0;
+            this.emp_photo.TabStop = false;
             // 
-            // textBox5
+            // emp_email_textbox
             // 
-            this.textBox5.Location = new System.Drawing.Point(6, 358);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(258, 27);
-            this.textBox5.TabIndex = 20;
+            this.emp_email_textbox.Location = new System.Drawing.Point(6, 358);
+            this.emp_email_textbox.Name = "emp_email_textbox";
+            this.emp_email_textbox.Size = new System.Drawing.Size(258, 27);
+            this.emp_email_textbox.TabIndex = 20;
             // 
             // label8
             // 
@@ -335,12 +354,12 @@ namespace HR_Department
             this.label8.TabIndex = 19;
             this.label8.Text = "E-mail";
             // 
-            // textBox6
+            // emp_postition_textbox
             // 
-            this.textBox6.Location = new System.Drawing.Point(6, 432);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(258, 27);
-            this.textBox6.TabIndex = 22;
+            this.emp_postition_textbox.Location = new System.Drawing.Point(6, 432);
+            this.emp_postition_textbox.Name = "emp_postition_textbox";
+            this.emp_postition_textbox.Size = new System.Drawing.Size(258, 27);
+            this.emp_postition_textbox.TabIndex = 22;
             // 
             // label9
             // 
@@ -352,22 +371,79 @@ namespace HR_Department
             this.label9.TabIndex = 21;
             this.label9.Text = "Position";
             // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(6, 501);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(258, 27);
-            this.textBox7.TabIndex = 24;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("MS Gothic", 13.8F);
             this.label10.Location = new System.Drawing.Point(6, 474);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 24);
+            this.label10.Size = new System.Drawing.Size(142, 24);
             this.label10.TabIndex = 23;
-            this.label10.Text = "Salary";
+            this.label10.Text = "Experience:";
+            // 
+            // emp_experience_numeric
+            // 
+            this.emp_experience_numeric.Location = new System.Drawing.Point(144, 475);
+            this.emp_experience_numeric.Name = "emp_experience_numeric";
+            this.emp_experience_numeric.Size = new System.Drawing.Size(86, 27);
+            this.emp_experience_numeric.TabIndex = 24;
+            // 
+            // emp_salary_numeric
+            // 
+            this.emp_salary_numeric.Location = new System.Drawing.Point(106, 515);
+            this.emp_salary_numeric.Name = "emp_salary_numeric";
+            this.emp_salary_numeric.Size = new System.Drawing.Size(120, 27);
+            this.emp_salary_numeric.TabIndex = 26;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("MS Gothic", 13.8F);
+            this.label11.Location = new System.Drawing.Point(6, 515);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(94, 24);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Salary:";
+            // 
+            // clear_emp_button
+            // 
+            this.clear_emp_button.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clear_emp_button.Location = new System.Drawing.Point(89, 548);
+            this.clear_emp_button.Name = "clear_emp_button";
+            this.clear_emp_button.Size = new System.Drawing.Size(85, 42);
+            this.clear_emp_button.TabIndex = 28;
+            this.clear_emp_button.Text = "Clear";
+            this.clear_emp_button.UseVisualStyleBackColor = true;
+            // 
+            // delete_emp_button
+            // 
+            this.delete_emp_button.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.delete_emp_button.Location = new System.Drawing.Point(183, 548);
+            this.delete_emp_button.Name = "delete_emp_button";
+            this.delete_emp_button.Size = new System.Drawing.Size(85, 42);
+            this.delete_emp_button.TabIndex = 29;
+            this.delete_emp_button.Text = "Delete";
+            this.delete_emp_button.UseVisualStyleBackColor = true;
+            // 
+            // save_emp_button
+            // 
+            this.save_emp_button.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.save_emp_button.Location = new System.Drawing.Point(0, 594);
+            this.save_emp_button.Name = "save_emp_button";
+            this.save_emp_button.Size = new System.Drawing.Size(268, 42);
+            this.save_emp_button.TabIndex = 30;
+            this.save_emp_button.Text = "Save";
+            this.save_emp_button.UseVisualStyleBackColor = true;
+            // 
+            // add_emp_button
+            // 
+            this.add_emp_button.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.add_emp_button.Location = new System.Drawing.Point(0, 548);
+            this.add_emp_button.Name = "add_emp_button";
+            this.add_emp_button.Size = new System.Drawing.Size(81, 42);
+            this.add_emp_button.TabIndex = 31;
+            this.add_emp_button.Text = "Add";
+            this.add_emp_button.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -383,13 +459,16 @@ namespace HR_Department
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "HR Department control tool";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emp_photo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emp_experience_numeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emp_salary_numeric)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -397,35 +476,41 @@ namespace HR_Department
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox dep_list;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button delete_dep_button;
         private System.Windows.Forms.Button save_dep_button;
         private System.Windows.Forms.Button add_dep_button;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox dep_name_textbox;
+        private System.Windows.Forms.ListBox employees_list;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button delete_emp_photo;
+        private System.Windows.Forms.Button save_emp_photo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button add_emp_photo;
+        private System.Windows.Forms.PictureBox emp_photo;
+        private System.Windows.Forms.TextBox emp_phone_textbox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox emp_address_textbox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox emp_name_textbox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox emp_postition_textbox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox emp_email_textbox;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button add_emp_button;
+        private System.Windows.Forms.Button save_emp_button;
+        private System.Windows.Forms.Button delete_emp_button;
+        private System.Windows.Forms.Button clear_emp_button;
+        private System.Windows.Forms.NumericUpDown emp_salary_numeric;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown emp_experience_numeric;
     }
 }
 

@@ -81,8 +81,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\Data\Departments.xml" />
+    <Content Include="Data\Data\Employees.xml" />
+    <Content Include="Data\Images\Admin.jpg" />
+    <Content Include="Data\Images\bugalter.jpg" />
+    <Content Include="Data\Images\Koder.jpg" />
+    <Content Include="Data\Images\Mendger.jpg" />
     <Content Include="Images\favicon.ico" />
     <None Include="Images\profile.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
