@@ -44,7 +44,7 @@ namespace HR_Department
             this.label7 = new System.Windows.Forms.Label();
             this.emp_address_textbox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.emp_birthday_datepick = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.emp_name_textbox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,9 +59,7 @@ namespace HR_Department
             this.emp_postition_textbox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.emp_experience_numeric = new System.Windows.Forms.NumericUpDown();
             this.emp_salary_numeric = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
             this.clear_emp_button = new System.Windows.Forms.Button();
             this.delete_emp_button = new System.Windows.Forms.Button();
             this.save_emp_button = new System.Windows.Forms.Button();
@@ -70,7 +68,6 @@ namespace HR_Department
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.emp_photo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emp_experience_numeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emp_salary_numeric)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,8 +177,6 @@ namespace HR_Department
             this.groupBox2.Controls.Add(this.delete_emp_button);
             this.groupBox2.Controls.Add(this.clear_emp_button);
             this.groupBox2.Controls.Add(this.emp_salary_numeric);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.emp_experience_numeric);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.emp_postition_textbox);
             this.groupBox2.Controls.Add(this.label9);
@@ -191,7 +186,7 @@ namespace HR_Department
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.emp_address_textbox);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.dateTimePicker);
+            this.groupBox2.Controls.Add(this.emp_birthday_datepick);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.emp_name_textbox);
             this.groupBox2.Controls.Add(this.label4);
@@ -205,7 +200,7 @@ namespace HR_Department
             // 
             // emp_phone_textbox
             // 
-            this.emp_phone_textbox.Location = new System.Drawing.Point(6, 287);
+            this.emp_phone_textbox.Location = new System.Drawing.Point(6, 302);
             this.emp_phone_textbox.Name = "emp_phone_textbox";
             this.emp_phone_textbox.Size = new System.Drawing.Size(258, 27);
             this.emp_phone_textbox.TabIndex = 18;
@@ -214,7 +209,7 @@ namespace HR_Department
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("MS Gothic", 13.8F);
-            this.label7.Location = new System.Drawing.Point(6, 260);
+            this.label7.Location = new System.Drawing.Point(6, 275);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 24);
             this.label7.TabIndex = 17;
@@ -222,7 +217,7 @@ namespace HR_Department
             // 
             // emp_address_textbox
             // 
-            this.emp_address_textbox.Location = new System.Drawing.Point(6, 216);
+            this.emp_address_textbox.Location = new System.Drawing.Point(6, 231);
             this.emp_address_textbox.Name = "emp_address_textbox";
             this.emp_address_textbox.Size = new System.Drawing.Size(258, 27);
             this.emp_address_textbox.TabIndex = 16;
@@ -231,25 +226,25 @@ namespace HR_Department
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("MS Gothic", 13.8F);
-            this.label6.Location = new System.Drawing.Point(6, 189);
+            this.label6.Location = new System.Drawing.Point(6, 204);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 24);
             this.label6.TabIndex = 15;
             this.label6.Text = "Address";
             // 
-            // dateTimePicker
+            // emp_birthday_datepick
             // 
-            this.dateTimePicker.CalendarFont = new System.Drawing.Font("MS Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker.Location = new System.Drawing.Point(10, 146);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(258, 27);
-            this.dateTimePicker.TabIndex = 14;
+            this.emp_birthday_datepick.CalendarFont = new System.Drawing.Font("MS Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.emp_birthday_datepick.Location = new System.Drawing.Point(10, 161);
+            this.emp_birthday_datepick.Name = "emp_birthday_datepick";
+            this.emp_birthday_datepick.Size = new System.Drawing.Size(258, 27);
+            this.emp_birthday_datepick.TabIndex = 14;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("MS Gothic", 13.8F);
-            this.label5.Location = new System.Drawing.Point(6, 105);
+            this.label5.Location = new System.Drawing.Point(6, 120);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(166, 24);
             this.label5.TabIndex = 13;
@@ -257,7 +252,7 @@ namespace HR_Department
             // 
             // emp_name_textbox
             // 
-            this.emp_name_textbox.Location = new System.Drawing.Point(10, 67);
+            this.emp_name_textbox.Location = new System.Drawing.Point(10, 82);
             this.emp_name_textbox.Name = "emp_name_textbox";
             this.emp_name_textbox.Size = new System.Drawing.Size(258, 27);
             this.emp_name_textbox.TabIndex = 12;
@@ -266,7 +261,7 @@ namespace HR_Department
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MS Gothic", 13.8F);
-            this.label4.Location = new System.Drawing.Point(6, 36);
+            this.label4.Location = new System.Drawing.Point(6, 51);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(166, 24);
             this.label4.TabIndex = 11;
@@ -326,6 +321,7 @@ namespace HR_Department
             this.add_emp_photo.TabIndex = 8;
             this.add_emp_photo.Text = "Add";
             this.add_emp_photo.UseVisualStyleBackColor = true;
+            this.add_emp_photo.Click += new System.EventHandler(this.add_emp_photo_Click);
             // 
             // emp_photo
             // 
@@ -339,7 +335,7 @@ namespace HR_Department
             // 
             // emp_email_textbox
             // 
-            this.emp_email_textbox.Location = new System.Drawing.Point(6, 358);
+            this.emp_email_textbox.Location = new System.Drawing.Point(6, 373);
             this.emp_email_textbox.Name = "emp_email_textbox";
             this.emp_email_textbox.Size = new System.Drawing.Size(258, 27);
             this.emp_email_textbox.TabIndex = 20;
@@ -348,7 +344,7 @@ namespace HR_Department
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("MS Gothic", 13.8F);
-            this.label8.Location = new System.Drawing.Point(6, 331);
+            this.label8.Location = new System.Drawing.Point(6, 346);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 24);
             this.label8.TabIndex = 19;
@@ -356,7 +352,7 @@ namespace HR_Department
             // 
             // emp_postition_textbox
             // 
-            this.emp_postition_textbox.Location = new System.Drawing.Point(6, 432);
+            this.emp_postition_textbox.Location = new System.Drawing.Point(6, 447);
             this.emp_postition_textbox.Name = "emp_postition_textbox";
             this.emp_postition_textbox.Size = new System.Drawing.Size(258, 27);
             this.emp_postition_textbox.TabIndex = 22;
@@ -365,7 +361,7 @@ namespace HR_Department
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("MS Gothic", 13.8F);
-            this.label9.Location = new System.Drawing.Point(6, 405);
+            this.label9.Location = new System.Drawing.Point(6, 420);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(106, 24);
             this.label9.TabIndex = 21;
@@ -375,35 +371,23 @@ namespace HR_Department
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("MS Gothic", 13.8F);
-            this.label10.Location = new System.Drawing.Point(6, 474);
+            this.label10.Location = new System.Drawing.Point(6, 489);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(142, 24);
+            this.label10.Size = new System.Drawing.Size(94, 24);
             this.label10.TabIndex = 23;
-            this.label10.Text = "Experience:";
-            // 
-            // emp_experience_numeric
-            // 
-            this.emp_experience_numeric.Location = new System.Drawing.Point(144, 475);
-            this.emp_experience_numeric.Name = "emp_experience_numeric";
-            this.emp_experience_numeric.Size = new System.Drawing.Size(86, 27);
-            this.emp_experience_numeric.TabIndex = 24;
+            this.label10.Text = "Salary:";
             // 
             // emp_salary_numeric
             // 
-            this.emp_salary_numeric.Location = new System.Drawing.Point(106, 515);
+            this.emp_salary_numeric.Location = new System.Drawing.Point(106, 490);
+            this.emp_salary_numeric.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.emp_salary_numeric.Name = "emp_salary_numeric";
-            this.emp_salary_numeric.Size = new System.Drawing.Size(120, 27);
-            this.emp_salary_numeric.TabIndex = 26;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("MS Gothic", 13.8F);
-            this.label11.Location = new System.Drawing.Point(6, 515);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(94, 24);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "Salary:";
+            this.emp_salary_numeric.Size = new System.Drawing.Size(117, 27);
+            this.emp_salary_numeric.TabIndex = 24;
             // 
             // clear_emp_button
             // 
@@ -449,6 +433,7 @@ namespace HR_Department
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(974, 642);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -467,7 +452,6 @@ namespace HR_Department
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.emp_photo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emp_experience_numeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emp_salary_numeric)).EndInit();
             this.ResumeLayout(false);
 
@@ -495,7 +479,7 @@ namespace HR_Department
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox emp_address_textbox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.DateTimePicker emp_birthday_datepick;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox emp_name_textbox;
         private System.Windows.Forms.Label label4;
@@ -509,8 +493,6 @@ namespace HR_Department
         private System.Windows.Forms.Button delete_emp_button;
         private System.Windows.Forms.Button clear_emp_button;
         private System.Windows.Forms.NumericUpDown emp_salary_numeric;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.NumericUpDown emp_experience_numeric;
     }
 }
 

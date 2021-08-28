@@ -5,7 +5,7 @@
 	<employee dep_name="Компьютерный отдел" name="Petrov Petrov" birth="15.10.2000" addr="Lviv" phone="222-222-222" email="petrovpetr@ukr.net" pos="Кодер" sal="2800" photo ="Koder.jpg"></employee>
 	<employee dep_name="Финансовый отдел" name="Sergeeva Olga" birth="18.10.2001" addr="Odessa" phone="333-333-333" email="sergeevaolga@gmail.com" pos="Бугалтер" sal="2200" photo ="Бугалтер.jpg"></employee>
 	<employee dep_name="Финансовый отдел" name="Andreeva Maria" birth="24.01.1997" addr="Kyiv" phone="444-444-444" email="olgaandrew@gmail.com" pos="Менеджер" sal="2300" photo ="Менеджер.jpg"></employee>
-	<employee dep_name="Отдел маркетинга" name="" birth="" addr="" phone="" email="" pos="" sal="" photo =""></employee>
+	<employee dep_name="Отдел маркетинга" name="test" birth="" addr="" phone="" email="" pos="" sal="" photo =""></employee>
 	<employee dep_name="Отдел маркетинга" name="" birth="" addr="" phone="" email="" pos="" sal="" photo =""></employee>
 	<employee dep_name="Юридический отдел" name="" birth="" addr="" phone="" email="" pos="" sal="" photo =""></employee>
 	<employee dep_name="Юридический отдел" name="" birth="" addr="" phone="" email="" pos="" sal="" photo =""></employee>

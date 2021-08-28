@@ -17,6 +17,7 @@ namespace HR_Department
         string path2;
         XDocument doc1;
         XDocument doc2;
+        string photoPath;
         public Form1()
         {
             InitializeComponent();
@@ -97,7 +98,39 @@ namespace HR_Department
             if (emp != null){ 
             
                 string image_path = $"..\\..\\Data\\Images\\{emp.Attribute("photo").Value}";
-                emp_photo.Image = Image.FromFile(image_path);
+                try
+                {
+                    emp_photo.Image = Image.FromFile(image_path);
+                }
+                catch
+                {
+                    emp_photo.Image = Image.FromFile(@"..\..\Images\profile.png");
+                }
+                try
+                {
+                    emp_name_textbox.Text = emp.Attribute("name").Value;
+                    //emp_birthday_datepick.Value = emp.Attribute("birth").Value;
+                    emp_address_textbox.Text = emp.Attribute("addr").Value;
+                    emp_phone_textbox.Text = emp.Attribute("phone").Value;
+                    emp_postition_textbox.Text = emp.Attribute("pos").Value;
+                    emp_email_textbox.Text = emp.Attribute("email").Value;
+                    emp_salary_numeric.Value = int.Parse(emp.Attribute("sal").Value);
+                }
+                catch
+                {
+                    MessageBox.Show("Load error");
+                }
+            }
+        }
+
+        private void add_emp_photo_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Jpeg files (*.jpg)|*.jpg|PNG files (*.png)|*.png|All files (*.*)|*.*";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                photoPath = ofd.FileName;
+                emp_photo.Image = Image.FromFile(photoPath);
             }
         }
     }   
