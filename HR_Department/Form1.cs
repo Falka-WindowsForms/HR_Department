@@ -67,9 +67,19 @@ namespace HR_Department
         {
             if (dep_list.Items.Count > 0)
             {
-                string name = dep_list.Items.ToString();
-               // dep_list.Items.RemoveAt(dep_list.SelectedIndex);
-                //doc1.Element("root").Remove();
+                DialogResult res = MessageBox.Show("Delete department?", "Confirm action", MessageBoxButtons.YesNo);
+                if (res != DialogResult.Yes)
+                    return;
+                string name = dep_list.SelectedItem.ToString();
+                dep_list.Items.Remove(name);
+                employees_list.Items.Clear();
+                doc1.Element("root").Elements("department").Where(emp => emp.Attribute("name").Value == name).Remove();
+                doc1.Save(path1);
+                res = MessageBox.Show("Delete department employees?", "Confirm action", MessageBoxButtons.YesNo);
+                if (res != DialogResult.Yes)
+                    return;
+                doc2.Element("root").Elements("employee").Where(emp => emp.Attribute("dep_name").Value == name).Remove();
+                doc2.Save(path2);
             }
             else
             {
@@ -131,6 +141,36 @@ namespace HR_Department
             {
                 photoPath = ofd.FileName;
                 emp_photo.Image = Image.FromFile(photoPath);
+            }
+        }
+
+        private void save_dep_button_Click(object sender, EventArgs e)
+        {
+            if(dep_list.SelectedIndex != -1)
+            {
+                if (dep_name_textbox.Text == "")
+                    MessageBox.Show("Department name can`t be null");
+                else
+                {
+                    string oldName = dep_list.SelectedItem.ToString();
+                    XElement item = doc1.Element("root").Elements("department").Where(emp => emp.Attribute("name").Value == dep_list.SelectedItem.ToString()).SingleOrDefault();
+                    item.Attribute("name").Value = dep_name_textbox.Text;
+                    doc1.Save(path1);
+                    DialogResult result = MessageBox.Show("Transfer employees to another department?", "Confirm action", MessageBoxButtons.YesNo);
+                    item = null;
+                    if (result == DialogResult.Yes)
+                    {
+                            var items = doc2.Element("root").Elements("employee").Where(emp => emp.Attribute("dep_name").Value == oldName);
+                        foreach (var element in items)
+                        {
+                            element.SetAttributeValue("dep_name", dep_name_textbox.Text);
+                        }
+                        doc2.Save(path2);
+                    }
+
+                    dep_list.Items[dep_list.SelectedIndex] = dep_name_textbox.Text;
+                    dep_name_textbox.Clear();
+                }
             }
         }
     }   

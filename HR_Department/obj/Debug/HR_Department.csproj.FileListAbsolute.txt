@@ -8,3 +8,13 @@ C:\Users\student\source\repos\HR_Department\HR_Department\obj\Debug\HR_Departmen
 C:\Users\student\source\repos\HR_Department\HR_Department\obj\Debug\HR_Department.exe
 C:\Users\student\source\repos\HR_Department\HR_Department\obj\Debug\HR_Department.pdb
 C:\Users\student\source\repos\HR_Department\HR_Department\obj\Debug\HR_Department.Form1.resources
+C:\Users\vsh15\source\repos\HR_Department\HR_Department\bin\Debug\HR_Department.exe.config
+C:\Users\vsh15\source\repos\HR_Department\HR_Department\bin\Debug\HR_Department.exe
+C:\Users\vsh15\source\repos\HR_Department\HR_Department\bin\Debug\HR_Department.pdb
+C:\Users\vsh15\source\repos\HR_Department\HR_Department\obj\Debug\HR_Department.csproj.AssemblyReference.cache
+C:\Users\vsh15\source\repos\HR_Department\HR_Department\obj\Debug\HR_Department.Form1.resources
+C:\Users\vsh15\source\repos\HR_Department\HR_Department\obj\Debug\HR_Department.Properties.Resources.resources
+C:\Users\vsh15\source\repos\HR_Department\HR_Department\obj\Debug\HR_Department.csproj.GenerateResource.cache
+C:\Users\vsh15\source\repos\HR_Department\HR_Department\obj\Debug\HR_Department.csproj.CoreCompileInputs.cache
+C:\Users\vsh15\source\repos\HR_Department\HR_Department\obj\Debug\HR_Department.exe
+C:\Users\vsh15\source\repos\HR_Department\HR_Department\obj\Debug\HR_Department.pdb
