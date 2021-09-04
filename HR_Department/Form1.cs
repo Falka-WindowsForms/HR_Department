@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.IO;
+
 
 namespace HR_Department
 {
@@ -18,6 +20,7 @@ namespace HR_Department
         XDocument doc1;
         XDocument doc2;
         string photoPath;
+        string photoName;
         public Form1()
         {
             InitializeComponent();
@@ -59,6 +62,7 @@ namespace HR_Department
                     new XAttribute("name", name)));
                 doc1.Save(path1);
                 dep_name_textbox.Clear();
+                
                 MessageBox.Show("Department added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -109,11 +113,12 @@ namespace HR_Department
                 .FirstOrDefault();
             if (emp != null){
                     
-                //string image_path = $"..\\..\\Data\\Images\\{emp.Attribute("photo").Value}";
-                string image_path = $"{emp.Attribute("photo").Value}";
+                string image_path = $"..\\..\\Data\\Images\\{emp.Attribute("photo").Value}";
+                //string image_path = $"{emp.Attribute("photo").Value}";
                 try
                 {
                     photoPath = image_path;
+                    photoName = emp.Attribute("photo").Value;
                     emp_photo.Image = Image.FromFile(image_path);
                 }
                 catch
@@ -145,7 +150,9 @@ namespace HR_Department
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 photoPath = ofd.FileName;
+                photoName = ofd.SafeFileName;
                 emp_photo.Image = Image.FromFile(photoPath);
+                
             }
         }
 
@@ -207,9 +214,15 @@ namespace HR_Department
                     new XAttribute("email",emp_email_textbox.Text),
                     new XAttribute("pos",emp_postition_textbox.Text),
                     new XAttribute("sal",emp_salary_numeric.Value.ToString()),
-                    new XAttribute("photo",photoPath.ToString())
+                    new XAttribute("photo",photoName.ToString())
                     )) ;
             doc2.Save(path2);
+            if (!(File.Exists($"..\\..\\Data\\Images\\{photoName}")))
+            {
+                File.Copy(photoPath, $"..\\..\\Data\\Images\\{photoName}");
+            }
+
+            employees_list.SelectedIndex = employees_list.Items.Count - 1;
             MessageBox.Show("Added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }   
