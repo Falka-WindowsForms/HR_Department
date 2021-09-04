@@ -109,7 +109,7 @@ namespace HR_Department
                 try
                 {
                     emp_name_textbox.Text = emp.Attribute("name").Value;
-                    //emp_birthday_datepick.Value = emp.Attribute("birth").Value;
+                    emp_birthday_datepick.Value = DateTime.Parse(emp.Attribute("birth").Value);
                     emp_address_textbox.Text = emp.Attribute("addr").Value;
                     emp_phone_textbox.Text = emp.Attribute("phone").Value;
                     emp_postition_textbox.Text = emp.Attribute("pos").Value;
