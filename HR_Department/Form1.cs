@@ -101,19 +101,24 @@ namespace HR_Department
 
         private void employees_list_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (employees_list.SelectedIndex<0 || employees_list.SelectedItem == null)
+                return;
             string emp_name = employees_list.SelectedItem.ToString();
             var emp = doc2.Element("root").Elements("employee")
                 .Where(x => x.Attribute("name").Value == emp_name)
                 .FirstOrDefault();
-            if (emp != null){ 
-            
-                string image_path = $"..\\..\\Data\\Images\\{emp.Attribute("photo").Value}";
+            if (emp != null){
+                    
+                //string image_path = $"..\\..\\Data\\Images\\{emp.Attribute("photo").Value}";
+                string image_path = $"{emp.Attribute("photo").Value}";
                 try
                 {
+                    photoPath = image_path;
                     emp_photo.Image = Image.FromFile(image_path);
                 }
                 catch
                 {
+                    photoPath = (@"..\..\Images\profile.png");
                     emp_photo.Image = Image.FromFile(@"..\..\Images\profile.png");
                 }
                 try
@@ -172,6 +177,40 @@ namespace HR_Department
                     dep_name_textbox.Clear();
                 }
             }
+        }
+
+        private void clear_emp_button_Click(object sender, EventArgs e)
+        {
+            photoPath = (@"..\..\Images\profile.png");
+            emp_photo.Image = Image.FromFile(@"..\..\Images\profile.png");
+            emp_name_textbox.Clear();
+            emp_birthday_datepick.Value = DateTime.Now;
+            emp_email_textbox.Clear();
+            emp_postition_textbox.Clear();
+            emp_salary_numeric.Value = 0;
+            emp_postition_textbox.Clear();
+            emp_phone_textbox.Clear();
+            emp_address_textbox.Clear();
+            employees_list.SelectedIndex = -1;
+        }
+
+        private void add_emp_button_Click(object sender, EventArgs e)
+        {
+            employees_list.Items.Add(emp_name_textbox.Text);
+            doc2.Element("root").Add(
+                    new XElement("employee",
+                    new XAttribute("dep_name", dep_list.SelectedItem.ToString()),
+                    new XAttribute("name", emp_name_textbox.Text),
+                    new XAttribute("birth", emp_birthday_datepick.Value.ToString()),
+                    new XAttribute("addr",emp_address_textbox.Text),
+                    new XAttribute("phone",emp_phone_textbox.Text),
+                    new XAttribute("email",emp_email_textbox.Text),
+                    new XAttribute("pos",emp_postition_textbox.Text),
+                    new XAttribute("sal",emp_salary_numeric.Value.ToString()),
+                    new XAttribute("photo",photoPath.ToString())
+                    )) ;
+            doc2.Save(path2);
+            MessageBox.Show("Added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }   
 }
