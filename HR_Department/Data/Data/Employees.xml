@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-
-	<employee dep_name="Компьютерный отдел" name="Ivanov Ivanov" birth="12.11.1990" addr="Kyiv" phone="111-111-111" email="ivanovivan@gmail.com" pos="Админ" sal="2500" photo ="Admin.jpg"></employee>
-	<employee dep_name="Компьютерный отдел" name="Petrov Petrov" birth="15.10.2000" addr="Lviv" phone="222-222-222" email="petrovpetr@ukr.net" pos="Кодер" sal="2800" photo ="Koder.jpg"></employee>
-	<employee dep_name="Финансовый отдел" name="Sergeeva Olga" birth="18.10.2001" addr="Odessa" phone="333-333-333" email="sergeevaolga@gmail.com" pos="Бугалтер" sal="2200" photo ="Бугалтер.jpg"></employee>
-	<employee dep_name="Финансовый отдел" name="Andreeva Maria" birth="24.01.1997" addr="Kyiv" phone="444-444-444" email="olgaandrew@gmail.com" pos="Менеджер" sal="2300" photo ="Менеджер.jpg"></employee>
-	<employee dep_name="Отдел маркетинга" name="test" birth="" addr="" phone="" email="" pos="" sal="" photo =""></employee>
-	<employee dep_name="Отдел маркетинга" name="" birth="" addr="" phone="" email="" pos="" sal="" photo =""></employee>
-	<employee dep_name="Юридический отдел" name="" birth="" addr="" phone="" email="" pos="" sal="" photo =""></employee>
-	<employee dep_name="Юридический отдел" name="" birth="" addr="" phone="" email="" pos="" sal="" photo =""></employee>
-	<employee dep_name="Отдел охраны" name="" birth="" addr="" phone="" email="" pos="" sal="" photo =""></employee>
-	<employee dep_name="Отдел охраны" name="" birth="" addr="" phone="" email="" pos="" sal="" photo =""></employee>	
+  <employee dep_name="Компьютерный отдел" name="Ivanov Ivanov" birth="12.11.1990" addr="Kyiv" phone="111-111-111" email="ivanovivan@gmail.com" pos="Админ" sal="2500" photo="Admin.jpg"></employee>
+  <employee dep_name="Компьютерный отдел" name="Petrov Petrov" birth="15.10.2000" addr="Lviv" phone="222-222-222" email="petrovpetr@ukr.net" pos="Кодер" sal="2800" photo="Koder.jpg"></employee>
+  <employee dep_name="Компьютерный отдел" name="Anna Petrovna" birth="11.11.2002" addr="Kyiv" phone="999-999-999" email="annapetrova@gmail.net" pos="Кодер" sal="2900" photo="person.jpg"></employee>
+  <employee dep_name="Финансовый отдел" name="Sergeeva Olga" birth="18.10.2001" addr="Odessa" phone="333-333-333" email="sergeevaolga@gmail.com" pos="Бугалтер" sal="2200" photo="Бугалтер.jpg"></employee>
+  <employee dep_name="Финансовый отдел" name="Andreeva Maria" birth="24.01.1997" addr="Kyiv" phone="444-444-444" email="olgaandrew@gmail.com" pos="Менеджер" sal="2300" photo="Менеджер.jpg"></employee>
+  <employee dep_name="Отдел маркетинга" name="test" birth="" addr="" phone="" email="" pos="" sal="" photo=""></employee>
+  <employee dep_name="Отдел маркетинга" name="" birth="" addr="" phone="" email="" pos="" sal="" photo=""></employee>
+  <employee dep_name="Юридический отдел" name="" birth="" addr="" phone="" email="" pos="" sal="" photo=""></employee>
+  <employee dep_name="Юридический отдел" name="" birth="" addr="" phone="" email="" pos="" sal="" photo=""></employee>
+  <employee dep_name="Отдел охраны" name="ad" birth="18.10.2001" addr="Odessa" phone="444-444-444" email="lgaandrew@gmail.com" pos="asda" sal="123" photo="person.jpg"></employee>
+  <employee dep_name="Отдел охраны" name="asd" birth="18.10.2001" addr="Odessa" phone="444-444-444" email="lgaandrew@gmail.com" pos="asd" sal="123" photo="person.jpg"></employee>
 </root>
