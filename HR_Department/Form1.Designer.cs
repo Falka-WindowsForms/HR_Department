@@ -218,6 +218,7 @@ namespace HR_Department
             this.save_emp_button.TabIndex = 30;
             this.save_emp_button.Text = "Save";
             this.save_emp_button.UseVisualStyleBackColor = true;
+            this.save_emp_button.Click += new System.EventHandler(this.save_emp_button_Click);
             // 
             // delete_emp_button
             // 
@@ -228,6 +229,7 @@ namespace HR_Department
             this.delete_emp_button.TabIndex = 29;
             this.delete_emp_button.Text = "Delete";
             this.delete_emp_button.UseVisualStyleBackColor = true;
+            this.delete_emp_button.Click += new System.EventHandler(this.delete_emp_button_Click);
             // 
             // clear_emp_button
             // 

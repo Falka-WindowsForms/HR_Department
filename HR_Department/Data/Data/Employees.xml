@@ -11,5 +11,6 @@
   <employee dep_name="Юридический отдел" name="" birth="" addr="" phone="" email="" pos="" sal="" photo=""></employee>
   <employee dep_name="Отдел охраны" name="ad" birth="18.10.2001" addr="Odessa" phone="444-444-444" email="lgaandrew@gmail.com" pos="asda" sal="123" photo="person.jpg"></employee>
   <employee dep_name="Отдел охраны" name="asd" birth="18.10.2001" addr="Odessa" phone="444-444-444" email="lgaandrew@gmail.com" pos="asd" sal="123" photo="person.jpg"></employee>
- 
+  <employee dep_name="Юридический отдел" name="Ivan NeIvanov" birth="04.09.2021 10:23:48" addr="Kyiv" phone="134-545-455" email="mymail@gmail.com" pos="Jurist" sal="1000" photo="test.jpg" />
+  
 </root>

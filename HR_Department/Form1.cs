@@ -185,8 +185,7 @@ namespace HR_Department
                 }
             }
         }
-
-        private void clear_emp_button_Click(object sender, EventArgs e)
+        private void Clear_emp_fileds()
         {
             photoPath = (@"..\..\Images\profile.png");
             emp_photo.Image = Image.FromFile(@"..\..\Images\profile.png");
@@ -199,6 +198,11 @@ namespace HR_Department
             emp_phone_textbox.Clear();
             emp_address_textbox.Clear();
             employees_list.SelectedIndex = -1;
+
+        }
+        private void clear_emp_button_Click(object sender, EventArgs e)
+        {
+            Clear_emp_fileds();
         }
 
         private void add_emp_button_Click(object sender, EventArgs e)
@@ -224,6 +228,44 @@ namespace HR_Department
 
             employees_list.SelectedIndex = employees_list.Items.Count - 1;
             MessageBox.Show("Added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void delete_emp_button_Click(object sender, EventArgs e)
+        {
+            if (employees_list.SelectedIndex < 0)
+                return;
+            DialogResult res = MessageBox.Show("Delete employee?", "Confirm action", MessageBoxButtons.YesNo);
+            if (res != DialogResult.Yes)
+                return;
+            string name = employees_list.SelectedItem.ToString();
+            employees_list.Items.Remove(name);
+            Clear_emp_fileds();
+            doc2.Element("root").Elements("employee").Where(emp => emp.Attribute("name").Value == name).Remove();
+            doc2.Save(path2);
+
+        }
+
+        private void save_emp_button_Click(object sender, EventArgs e)
+        {
+            if (employees_list.SelectedIndex < 0)
+                return;
+            string oldName = employees_list.SelectedItem.ToString();
+            var items = doc2.Element("root").Elements("employee").Where(emp => emp.Attribute("name").Value == oldName);
+            foreach (var element in items)
+            {
+                element.SetAttributeValue("name", emp_name_textbox.Text);
+                element.SetAttributeValue("birth", emp_birthday_datepick.Value.ToString());
+                element.SetAttributeValue("addr", emp_address_textbox.Text);
+                element.SetAttributeValue("phone", emp_phone_textbox.Text);
+                element.SetAttributeValue("email", emp_email_textbox.Text);
+                element.SetAttributeValue("pos", emp_postition_textbox.Text);
+                element.SetAttributeValue("sal", emp_salary_numeric.Text);
+                element.SetAttributeValue("photo", photoName);
+                
+            }
+            doc2.Save(path2);
+            employees_list.Items[employees_list.SelectedIndex] = emp_name_textbox.Text;
+            MessageBox.Show("Changed");
         }
     }   
 }
